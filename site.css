@@ -9,6 +9,17 @@
   --muted: #aaa;
 }
 
+/* ── Home page width fix (style.min.css caps body at 30rem) ── */
+#body {
+  max-width: 100% !important;
+}
+
+#body > main {
+  max-width: 30rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* ── Modal z-index fix (sits above sticky nav) ── */
 #modal { z-index: 1000 !important; }
 
