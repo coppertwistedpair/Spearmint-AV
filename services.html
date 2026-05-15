@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | Spearmint AV</title>
+  <link rel="stylesheet" href="./site.css">
+</head>
+<body class="pg">
+
+  <nav class="site-nav">
+    <a href="./index.html" class="nav-brand">
+      <img src="./logo.png" alt="Spearmint AV">
+    </a>
+    <button class="nav-hamburger" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="./index.html">Home</a></li>
+      <li><a href="./services.html" class="nav-active">Services</a></li>
+      <li><a href="./about.html">About</a></li>
+      <li><a href="./gallery.html">Gallery</a></li>
+    </ul>
+  </nav>
+
+  <div class="pg-hero">
+    <h1>Our <em>Services</em></h1>
+    <p>Lighting and AV setups for weddings, mitzvahs, galas, and private events across the DFW Metroplex</p>
+  </div>
+
+  <div class="wrap">
+    <div class="svc-grid svc-grid--t">
+
+      <div class="svc-card fade-up">
+        <span class="svc-icon">💡</span>
+        <h3>Uplighting</h3>
+        <p>Transform any venue with stunning uplighting that sets the perfect mood. Custom color matching for your event theme — from elegant whites to vibrant party hues.</p>
+        <a href="./media/uplighting_flyer.pdf" target="_blank" class="svc-link">Download flyer →</a>
+      </div>
+
+      <div class="svc-card fade-up">
+        <span class="svc-icon">🔴</span>
+        <h3>Laser Shows</h3>
+        <p>High-powered laser displays that make any room feel electric. A huge hit at mitzvahs, galas, and milestone celebrations where you want a genuine wow moment.</p>
+        <a href="./media/lasers.pdf" target="_blank" class="svc-link">Download flyer →</a>
+      </div>
+
+      <div class="svc-card fade-up">
+        <span class="svc-icon">🎭</span>
+        <h3>Lighting Design</h3>
+        <p>Custom lighting design and programming built around your event. Whether it's a rehearsal dinner or a 200-person wedding reception, we make it look intentional.</p>
+      </div>
+
+      <div class="svc-card soon fade-up">
+        <span class="svc-icon">📻</span>
+        <h3>Radio Rentals</h3>
+        <p>Two-way radio rentals for seamless on-site communication — perfect for keeping your event staff coordinated across large venues.</p>
+      </div>
+
+    </div>
+
+    <div style="margin-top: 3rem;">
+      <p class="sg-title fade-up">Downloadable <em>Brochures</em></p>
+      <p class="sg-sub fade-up">Detailed info on our most popular services</p>
+      <div class="brochure-grid">
+
+        <div class="brochure-card fade-up">
+          <img src="./media/uplighting_flyer.jpeg" alt="Uplighting Brochure">
+          <div class="brochure-info">
+            <strong>Uplighting</strong>
+            <span>PDF &middot; 717.68 KB</span>
+            <a href="./media/uplighting_flyer.pdf" download target="_blank" class="btn btn-fill">Download</a>
+          </div>
+        </div>
+
+        <div class="brochure-card fade-up">
+          <img src="./media/lasers.jpeg" alt="Laser Show Brochure">
+          <div class="brochure-info">
+            <strong>Laser Shows</strong>
+            <span>PDF &middot; 1.62 MB</span>
+            <a href="./media/lasers.pdf" download target="_blank" class="btn btn-fill">Download</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div style="margin-top: 3rem;">
+      <div class="cta-block fade-up">
+        <h2>Ready to light up your event?</h2>
+        <p>Get a free quote for your next event anywhere in the DFW Metroplex.</p>
+        <div class="cta-btns">
+          <a href="tel:972-897-9639" class="btn btn-fill">Call (972) 897-9639</a>
+          <a href="mailto:spearmintav@gmail.com" class="btn btn-ghost">Email Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p>Spearmint AV &middot; Serving the DFW Metroplex</p>
+    <p><a href="tel:972-897-9639">(972) 897-9639</a> &middot; <a href="mailto:spearmintav@gmail.com">spearmintav@gmail.com</a></p>
+  </footer>
+
+  <script>
+    document.getElementById('navToggle').addEventListener('click', function() {
+      document.getElementById('navLinks').classList.toggle('is-open');
+    });
+    const obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('in'); });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.fade-up').forEach(function(el) { obs.observe(el); });
+  </script>
+
+</body>
+</html>

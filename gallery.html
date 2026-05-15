@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | Spearmint AV</title>
+  <link rel="stylesheet" href="./site.css">
+  <style>
+    a.gal-hero-item { text-decoration: none; display: block; }
+    .gal-hero-item {
+      border-radius: 1rem;
+      overflow: hidden;
+      border: 1px solid rgba(138,208,175,0.15);
+      transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+      position: relative;
+    }
+    .gal-hero-item:hover {
+      transform: translateY(-4px);
+      border-color: rgba(138,208,175,0.5);
+      box-shadow: 0 12px 36px rgba(138,208,175,0.15);
+    }
+    .gal-hero-item img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      display: block;
+    }
+    .gal-hero-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.25rem;
+    }
+    .gal-hero-grid > * {
+      width: 100%;
+      max-width: 480px;
+    }
+    .gal-label {
+      background: var(--bg-dark);
+      padding: 0.875rem 1rem;
+      font-family: sans-serif;
+    }
+    .gal-label strong {
+      color: var(--accent);
+      font-size: 1rem;
+      display: block;
+    }
+    .gal-label span {
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+    .more-soon {
+      background: var(--bg-dark);
+      border: 2px dashed rgba(138,208,175,0.2);
+      border-radius: 1rem;
+      padding: 3rem 2rem;
+      text-align: center;
+      margin-top: 2rem;
+      font-family: sans-serif;
+    }
+    .more-soon p { color: var(--muted); font-size: 0.95rem; margin: 0.5rem 0 0; }
+    .more-soon strong { color: var(--accent); font-size: 1.1rem; }
+  </style>
+</head>
+<body class="pg">
+
+  <nav class="site-nav">
+    <a href="./index.html" class="nav-brand">
+      <img src="./logo.png" alt="Spearmint AV">
+    </a>
+    <button class="nav-hamburger" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="./index.html">Home</a></li>
+      <li><a href="./services.html">Services</a></li>
+      <li><a href="./about.html">About</a></li>
+      <li><a href="./gallery.html" class="nav-active">Gallery</a></li>
+    </ul>
+  </nav>
+
+  <div class="pg-hero">
+    <h1>Event <em>Gallery</em></h1>
+    <p>A look at some of the events we've had the pleasure of lighting up</p>
+  </div>
+
+  <div class="wrap">
+
+    <p class="sg-title fade-up">Recent <em>Events</em></p>
+    <p class="sg-sub fade-up">Laser shows, uplighting, and everything in between. Real events, real results.</p>
+
+    <div class="gal-hero-grid">
+
+      <a class="gal-hero-item fade-up" href="./gallery-pta-2026.html">
+        <img src="./media/Prestonwood%20Elementary%20PTA/PXL_20260410_224547421.NIGHT.jpg" alt="Prestonwood Elementary PTA 2026 Auction">
+        <div class="gal-label">
+          <strong>Prestonwood Elementary PTA 2026 Auction</strong>
+          <span>Prestonwood Country Club &middot; Dallas, TX</span>
+        </div>
+      </a>
+
+    </div>
+
+    <div class="more-soon fade-up">
+      <strong>More photos coming soon</strong>
+      <p>We're adding event photos regularly. Check back after your event!</p>
+    </div>
+
+    <div style="margin-top: 3rem;">
+      <div class="cta-block fade-up">
+        <h2>Want your event here?</h2>
+        <p>Book Spearmint AV for your next event and we'll make it one worth showcasing.</p>
+        <div class="cta-btns">
+          <a href="tel:972-897-9639" class="btn btn-fill">Call (972) 897-9639</a>
+          <a href="./services.html" class="btn btn-ghost">View Services</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <p>Spearmint AV &middot; Serving the DFW Metroplex</p>
+    <p><a href="tel:972-897-9639">(972) 897-9639</a> &middot; <a href="mailto:spearmintav@gmail.com">spearmintav@gmail.com</a></p>
+  </footer>
+
+  <script>
+    document.getElementById('navToggle').addEventListener('click', function() {
+      document.getElementById('navLinks').classList.toggle('is-open');
+    });
+    const obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('in'); });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.fade-up').forEach(function(el) { obs.observe(el); });
+  </script>
+
+</body>
+</html>

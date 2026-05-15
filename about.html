@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Spearmint AV</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&display=swap">
+  <link rel="stylesheet" href="./site.css">
+</head>
+<body class="pg">
+
+  <nav class="site-nav">
+    <a href="./index.html" class="nav-brand">
+      <img src="./logo.png" alt="Spearmint AV">
+    </a>
+    <button class="nav-hamburger" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="./index.html">Home</a></li>
+      <li><a href="./services.html">Services</a></li>
+      <li><a href="./about.html" class="nav-active">About</a></li>
+      <li><a href="./gallery.html">Gallery</a></li>
+    </ul>
+  </nav>
+
+  <div class="pg-hero">
+    <h1>About <em>Spearmint AV</em></h1>
+    <p>DFW's dedicated audio-visual partner for events that leave a lasting impression</p>
+  </div>
+
+  <!-- Story section -->
+  <div class="wrap">
+    <div class="about-split fade-up">
+      <div class="about-img-wrap">
+        <img src="./media/PXL_20251226_023438532.jpg" alt="Spearmint AV event">
+      </div>
+      <div class="about-text">
+        <h2>Your Vision,<br><em>Our Craft</em></h2>
+        <p>
+          Spearmint AV was built around one idea: the people at your event should
+          walk away talking about it. We work weddings, Bar and Bat Mitzvahs,
+          fundraising galas, auctions, and private parties, and we put the same
+          care into a 50-person dinner as a 200-person reception.
+        </p>
+        <p>
+          Based in the DFW Metroplex, we know the venues, we know the crowds, and
+          we know how to make a room feel special. From the first call to the last
+          light packed up, we keep it easy on your end.
+        </p>
+        <ul class="check-list">
+          <li>Full-service setup and teardown. You handle guests, we handle the gear.</li>
+          <li>Serving Dallas, Fort Worth, Frisco, Plano, Arlington and beyond</li>
+          <li>Weddings, Bar and Bat Mitzvahs, galas, fundraisers, and private parties</li>
+          <li>Custom lighting packages built around your event and your budget</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tagline band -->
+  <div class="tagline-band fade-up">
+    <div class="tagline-inner">
+      <p class="tagline-quote">We make it look so good, your guests will think you hired a magician.</p>
+      <p class="tagline-sub">We aren't Houdini, but we can still wow a crowd.</p>
+    </div>
+  </div>
+
+  <!-- Why choose us -->
+  <div class="wrap">
+    <p class="sg-title fade-up">Why Choose <em>Us</em></p>
+    <p class="sg-sub fade-up">We show up on time, set up clean, and deliver results you can see and hear.</p>
+
+    <div class="svc-grid">
+      <div class="svc-card fade-up">
+        <span class="svc-icon">📞</span>
+        <h3>Easy to Reach</h3>
+        <p>Real person on the line. We respond fast and keep communication simple from quote to cleanup.</p>
+      </div>
+      <div class="svc-card fade-up">
+        <span class="svc-icon">🎯</span>
+        <h3>Tailored Packages</h3>
+        <p>No preset packages that kind of fit. Tell us your event and budget and we'll put together something that actually works for you.</p>
+      </div>
+      <div class="svc-card fade-up">
+        <span class="svc-icon">⚡</span>
+        <h3>Pro-Grade Equipment</h3>
+        <p>We use reliable, professional equipment that performs flawlessly so you never worry about technical hiccups on your big day.</p>
+      </div>
+    </div>
+
+    <div style="margin-top: 3rem;">
+      <div class="cta-block fade-up">
+        <h2>Let's work together</h2>
+        <p>Tell us about your event and we'll put together a custom quote.</p>
+        <div class="cta-btns">
+          <a href="tel:972-897-9639" class="btn btn-fill">Call (972) 897-9639</a>
+          <a href="./services.html" class="btn btn-ghost">View Services</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p>Spearmint AV &middot; Serving the DFW Metroplex</p>
+    <p><a href="tel:972-897-9639">(972) 897-9639</a> &middot; <a href="mailto:spearmintav@gmail.com">spearmintav@gmail.com</a></p>
+  </footer>
+
+  <script>
+    document.getElementById('navToggle').addEventListener('click', function() {
+      document.getElementById('navLinks').classList.toggle('is-open');
+    });
+    const obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('in'); });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.fade-up').forEach(function(el) { obs.observe(el); });
+  </script>
+
+</body>
+</html>
