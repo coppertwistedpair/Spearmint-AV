@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lahasky Bar Mitzvah | Spearmint AV</title>
+  <link rel="stylesheet" href="./site.css">
+  <style>
+    .event-header {
+      background: var(--bg-dark);
+      padding: 3rem 1.25rem 2.5rem;
+      position: relative;
+    }
+    .event-header::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(138,208,175,0.4), transparent);
+    }
+    .event-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-family: sans-serif;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      padding: 0.5rem 1rem;
+      border: 1px solid rgba(138,208,175,0.35);
+      border-radius: 2rem;
+      background: rgba(138,208,175,0.08);
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+    }
+    .event-back:hover {
+      background: rgba(138,208,175,0.18);
+      border-color: rgba(138,208,175,0.7);
+      color: var(--accent);
+    }
+    .event-header h1 {
+      font-family: sans-serif;
+      font-size: clamp(1.6rem, 4vw, 2.5rem);
+      font-weight: 900;
+      color: var(--text);
+      margin: 0 0 0.4rem;
+    }
+    .event-header h1 em { font-style: normal; color: var(--accent); }
+    .event-meta {
+      color: var(--muted);
+      font-family: sans-serif;
+      font-size: 0.95rem;
+    }
+    .event-meta span { margin-right: 1.25rem; }
+
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1rem;
+    }
+
+    .media-item {
+      border-radius: 0.75rem;
+      overflow: hidden;
+      border: 1px solid rgba(138,208,175,0.1);
+      background: var(--bg-dark);
+      transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    }
+    .media-item:hover {
+      transform: scale(1.02);
+      border-color: rgba(138,208,175,0.45);
+      box-shadow: 0 8px 24px rgba(138,208,175,0.12);
+    }
+
+    .media-item.is-photo { cursor: pointer; }
+
+    .media-item img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.92);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox img {
+      max-width: 100%;
+      max-height: 90vh;
+      border-radius: 0.5rem;
+      object-fit: contain;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 1rem; right: 1.25rem;
+      color: #fff;
+      font-size: 2rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+      line-height: 1;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+    .lightbox-close:hover { opacity: 1; }
+  </style>
+</head>
+<body class="pg">
+
+  <nav class="site-nav">
+    <a href="/" class="nav-brand">
+      <img src="./logo.png" alt="Spearmint AV">
+    </a>
+    <button class="nav-hamburger" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/">Home</a></li>
+      <li><a href="./services.html">Services</a></li>
+      <li><a href="./about.html">About</a></li>
+      <li><a href="./gallery.html" class="nav-active">Gallery</a></li>
+    </ul>
+  </nav>
+
+  <div class="event-header">
+    <div class="wrap" style="padding-top:0; padding-bottom:0;">
+      <a href="./gallery.html" class="event-back">&#8592; Back to Gallery</a>
+      <h1>Lahasky <em>Bar Mitzvah</em></h1>
+      <p class="event-meta">
+        <span>&#128337; May 2026</span>
+      </p>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="media-grid">
+
+      <div class="media-item is-photo fade-up" onclick="openLightbox(this.querySelector('img').src)">
+        <img src="./media/Lahasky%20Bar-Mitzvah/PXL_20260523_201236574.NIGHT%20-%20Copy.jpg" alt="Bar Mitzvah photo 1">
+      </div>
+
+      <div class="media-item is-photo fade-up" onclick="openLightbox(this.querySelector('img').src)">
+        <img src="./media/Lahasky%20Bar-Mitzvah/PXL_20260523_201451592.NIGHT%20-%20Copy.jpg" alt="Bar Mitzvah photo 2">
+      </div>
+
+      <div class="media-item is-photo fade-up" onclick="openLightbox(this.querySelector('img').src)">
+        <img src="./media/Lahasky%20Bar-Mitzvah/PXL_20260523_201505582.NIGHT%20-%20Copy.jpg" alt="Bar Mitzvah photo 3">
+      </div>
+
+      <div class="media-item is-photo fade-up" onclick="openLightbox(this.querySelector('img').src)">
+        <img src="./media/Lahasky%20Bar-Mitzvah/PXL_20260523_201528910.NIGHT%20-%20Copy.jpg" alt="Bar Mitzvah photo 4">
+      </div>
+
+      <div class="media-item is-photo fade-up" onclick="openLightbox(this.querySelector('img').src)">
+        <img src="./media/Lahasky%20Bar-Mitzvah/PXL_20260523_201538768.PANO%20-%20Copy.jpg" alt="Bar Mitzvah photo 5">
+      </div>
+
+      <div class="media-item is-photo fade-up" onclick="openLightbox(this.querySelector('img').src)">
+        <img src="./media/Lahasky%20Bar-Mitzvah/PXL_20260523_201547775.PANO%20-%20Copy.jpg" alt="Bar Mitzvah photo 6">
+      </div>
+
+      <div class="media-item is-photo fade-up" onclick="openLightbox(this.querySelector('img').src)">
+        <img src="./media/Lahasky%20Bar-Mitzvah/PXL_20260523_201600803.PANO%20-%20Copy.jpg" alt="Bar Mitzvah photo 7">
+      </div>
+
+      <div class="media-item is-photo fade-up" onclick="openLightbox(this.querySelector('img').src)">
+        <img src="./media/Lahasky%20Bar-Mitzvah/PXL_20260523_201648300.NIGHT%20-%20Copy.jpg" alt="Bar Mitzvah photo 8">
+      </div>
+
+      <div class="media-item is-photo fade-up" onclick="openLightbox(this.querySelector('img').src)">
+        <img src="./media/Lahasky%20Bar-Mitzvah/PXL_20260523_201659293.NIGHT%20-%20Copy.jpg" alt="Bar Mitzvah photo 9">
+      </div>
+
+      <div class="media-item is-photo fade-up" onclick="openLightbox(this.querySelector('img').src)">
+        <img src="./media/Lahasky%20Bar-Mitzvah/PXL_20260523_201718009.NIGHT%20-%20Copy.jpg" alt="Bar Mitzvah photo 10">
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p>Spearmint AV &middot; Serving the DFW Metroplex</p>
+    <p><a href="tel:972-897-9639">(972) 897-9639</a> &middot; <a href="mailto:spearmintav@gmail.com">spearmintav@gmail.com</a></p>
+  </footer>
+
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+    <img id="lightboxImg" src="" alt="">
+  </div>
+
+  <script>
+    document.getElementById('navToggle').addEventListener('click', function() {
+      document.getElementById('navLinks').classList.toggle('is-open');
+    });
+    const obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('in'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(function(el) { obs.observe(el); });
+
+    function openLightbox(src) {
+      document.getElementById('lightboxImg').src = src;
+      document.getElementById('lightbox').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
+
+</body>
+</html>
